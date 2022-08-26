@@ -1,8 +1,8 @@
-# Game of Life
-Conways game of life, ...
+# Game of Life v2.0
+Simple console app to test Conway's game of life, but rather than using multiple 2 dimentional arrays to keep track of, and calculate the next life cycle of live and dead cells, version 2 calculates all live and dead cells on the fly.
 
-## Version 2.0:
-The theory behind this version is that it is not necesary to store multiple grids (or two dimensional arrays) in memory tocompare and calculate a cells life or death. But rather to simply know the dimensions of the grid (x,y), and a one dimentional array with one-based index of live cells.
+## Theroy of version 2.0:
+The theory behind this version is rather to simply know the dimensions of the grid (x,y), and a one dimentional array with one-based index of live cells.
 
 ### Square Grid:
 0 0 0 0  
