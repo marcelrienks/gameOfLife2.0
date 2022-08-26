@@ -38,7 +38,7 @@ This formula also applies to non square grids
 0 0 0 0 0  
 
 grid: 5x3  
-list: [2,9] (one-based list index)
+list: [2,9] (_**one-based list index**_)
 
 2/5 = 0.4 => x = 0  
 (5*0.4)-1 = 1 => y = 1
