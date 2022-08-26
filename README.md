@@ -1,3 +1,5 @@
+WIP: I mistakenly mixed up the x, and y coordinates, these need to be swapped around
+
 # Game of Life v2.0
 Simple console app to test Conway's game of life, but rather than using multiple 2 dimentional arrays to keep track of, and calculate the next life cycle of live and dead cells, version 2 calculates all live and dead cells on the fly.
 
@@ -25,7 +27,7 @@ e.g.
 7/4 = 1.75 => x = 1  
 (4*0.75)-1 = 2 => y = 2
 
-13/7 = 3.25 => x = 3  
+13/4 = 3.25 => x = 3  
 (4*0.25)-1 = 0 => y = 0
 
 ### Non-Square Grid:
