@@ -13,22 +13,22 @@ The theory behind this version is rather to simply know the dimensions of the gr
 1 0 0 0  
 
 grid: 4x4  
-list: [7,13] (_**one-based array index**_)
+array: [7,13] of a _**one-based array index**_ list of live cells
 
 Using the above values, the formula for calculating the live cells x,y coordinate is:
-live cell / number of columns = decimal  
-where the whole number portion represents the x coordinate (_**zero-based row index**_).
+live cell / number of columns in grid = decimal  
+where the whole number portion represents the y coordinate of a _**zero-based row index**_ column.
 
 The fractional remainder can then be used in the following formula
 (number of columns * remainder) - 1 = whole number
-where the resultant whole number represents the y coordinate (_**zero-based column index**_).
+where the resultant whole number represents the x coordinate of a _**zero-based column index**_ row.
 
 e.g.  
-7/4 = 1.75 => x = 1  
-(4*0.75)-1 = 2 => y = 2
+7/4 = 1.75 => y = 1  
+(4*0.75)-1 = 2 => x = 2
 
-13/4 = 3.25 => x = 3  
-(4*0.25)-1 = 0 => y = 0
+13/4 = 3.25 => y = 3  
+(4*0.25)-1 = 0 => x = 0
 
 ### Non-Square Grid:
 This formula also applies to non square grids
@@ -38,10 +38,10 @@ This formula also applies to non square grids
 0 0 0 0 0  
 
 grid: 5x3  
-list: [2,9] (_**one-based list index**_)
+array: [2,9] of a _**one-based array index**_ list of live cells
 
-2/5 = 0.4 => x = 0  
-(5*0.4)-1 = 1 => y = 1
+2/5 = 0.4 => y = 0  
+(5*0.4)-1 = 1 => x = 1
 
-9/5 = 1.8 => x = 1  
-(5*0.8)-1 = 3 => y = 3
+9/5 = 1.8 => y = 1  
+(5*0.8)-1 = 3 => x = 3
