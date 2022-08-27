@@ -1,5 +1,3 @@
-WIP: I mistakenly mixed up the x, and y coordinates, these need to be swapped around
-
 # Game of Life v2.0
 Simple console app to test Conway's game of life, but rather than using multiple 2 dimentional arrays to keep track of, and calculate the next life cycle of live and dead cells, version 2 calculates all live and dead cells on the fly.
 
