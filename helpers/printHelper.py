@@ -1,4 +1,5 @@
 from os import system, name
+from helpers.utilHelper import UtilHelper
 
 class PrintHelper:
 
@@ -15,12 +16,14 @@ class PrintHelper:
     
     # Convert the dataset to a grid, and print it on the console
     @staticmethod
-    def printGrid(grid):
+    def printGrid(horizontal, vertical, liveCells):
         PrintHelper.clearScreen()
-        for row in grid:
+        count = 0
+        for row in vertical:
             printRow = ''
-            for element in row:
-                printRow += '□ ' if element == 0 else '■ '
+            for element in horizontal:
+                count += 1
+                printRow += '□ ' if (UtilHelper.safeIndex(liveCells, count)) != -1) else '■ '
                 printRow.strip()
             print(printRow)
     

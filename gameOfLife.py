@@ -6,7 +6,7 @@ from handlers.gameHandler import GameHandler
 
 # Main method
 def main():
-    # Generate seed grid
+    # TODO: replace grid with liveCells
     grid = preload()
 
     # Run
@@ -22,8 +22,8 @@ def preload():
     horizontal, vertical, seed = validateGridInput(gridInput)    
 
     # Print grid and get confirmation to run
-    grid = GridHelper.generateSeedGrid(horizontal, vertical, seed)
-    PrintHelper.printGrid(grid)
+    liveCells = GridHelper.generateLiveCells(horizontal, vertical, seed)
+    PrintHelper.printGrid(horizontal, vertical, liveCells)
     shouldRun = input("\nWould you like to run this seed?\ny or n\n")
     
     if shouldRun == 'y':
