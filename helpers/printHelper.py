@@ -23,7 +23,7 @@ class PrintHelper:
             printRow = ''
             for element in horizontal:
                 count += 1
-                printRow += '□ ' if (UtilHelper.safeIndex(liveCells, count)) != -1) else '■ '
+                printRow += '□ ' if (UtilHelper.safeIndex(liveCells, count)) == -1) else '■ '
                 printRow.strip()
             print(printRow)
     
