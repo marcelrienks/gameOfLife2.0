@@ -9,7 +9,6 @@ class GameHandler():
         self.vertical = vertical
         self.liveCells = liveCells
     
-    # TODO: rewrite run
     # Run conways game of life
     def run(self):
         iteration = 0
