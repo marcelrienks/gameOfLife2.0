@@ -19,11 +19,11 @@ class PrintHelper:
     def printGrid(horizontal, vertical, liveCells):
         PrintHelper.clearScreen()
         count = 0
-        for row in vertical:
+        for row in range(vertical):
             printRow = ''
-            for element in horizontal:
+            for element in range(horizontal):
                 count += 1
-                printRow += '□ ' if (UtilHelper.safeIndex(liveCells, count)) == -1) else '■ '
+                printRow += '□ ' if UtilHelper.safeIndex(liveCells, count) == -1 else '■ '
                 printRow.strip()
             print(printRow)
     

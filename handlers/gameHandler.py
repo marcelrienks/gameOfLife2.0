@@ -13,17 +13,15 @@ class GameHandler():
     def run(self):
         iteration = 0
         while True:
-            # Skip the seed grid, else calculate next lifecycle
-            if iteration > 0:
-                self.liveCells = self.calculateNextLifeCycle(self.liveCells)
-                if nextLiveCellCycle != None:
-                    # Print the new grid
-                    iteration += 1
-                    PrintHelper.printGridLifeCycle(self.horizontal, self.vertical, self.liveCells, iteration)
-                    time.sleep(0.3)
+            self.liveCells = self.calculateNextLifeCycle(self.liveCells)
+            if self.liveCells != None:
+                # Print the new grid
+                iteration += 1
+                PrintHelper.printGridLifeCycle(self.horizontal, self.vertical, self.liveCells, iteration)
+                time.sleep(0.3)
 
-                else:
-                    break
+            else:
+                break
 
         print('Complete!')
     
@@ -33,7 +31,3 @@ class GameHandler():
         #calculate row
 
         #calculate column
-
-        #TempTesting Code
-        liveCells = liveCells.append(2)
-        return liveCells
