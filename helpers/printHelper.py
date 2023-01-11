@@ -29,6 +29,6 @@ class PrintHelper:
     
     # Print the next lifecycle grid
     @staticmethod
-    def printGridLifeCycle(grid, iteration):
-        PrintHelper.printGrid(grid)
+    def printGridLifeCycle(horizontal, vertical, liveCells, iteration):
+        PrintHelper.printGrid(horizontal, vertical, liveCells)
         print('\nLifecycle', iteration)

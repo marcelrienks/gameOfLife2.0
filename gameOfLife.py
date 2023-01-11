@@ -6,11 +6,10 @@ from handlers.gameHandler import GameHandler
 
 # Main method
 def main():
-    # TODO: replace grid with liveCells
-    grid = preload()
+    horizontal, vertical, liveCells = preload()
 
     # Run
-    gameHandler = GameHandler(grid)
+    gameHandler = GameHandler(horizontal, vertical, liveCells)
     gameHandler.run()
 
 # Collect input, and preload seed grid    
@@ -27,7 +26,7 @@ def preload():
     shouldRun = input("\nWould you like to run this seed?\ny or n\n")
     
     if shouldRun == 'y':
-        return grid
+        return horizontal, vertical, liveCells
     
     else:
         return preload()
