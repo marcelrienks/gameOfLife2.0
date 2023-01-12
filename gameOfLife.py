@@ -6,10 +6,10 @@ from handlers.gameHandler import GameHandler
 
 # Main method
 def main():
-    horizontal, vertical, liveCells = preload()
+    columns, rows, liveCells = preload()
 
     # Run
-    gameHandler = GameHandler(horizontal, vertical, liveCells)
+    gameHandler = GameHandler(columns, rows, liveCells)
     gameHandler.run()
 
 # Collect input, and preload seed grid    
@@ -17,16 +17,16 @@ def preload():
     PrintHelper.clearScreen()
 
     # Collect intput and validate
-    gridInput = input("Please enter the horizontal, and vertical size, followed by the seed of the grid in the following format: 0x0:0\nThe size is the number of cells horizontally and vertically, and the seed is the number of randomly placed live cells to start with.\n(e.g. 40x40:200).\n")
-    horizontal, vertical, seed = validateGridInput(gridInput)    
+    gridInput = input("Please enter the columns, and rows size, followed by the seed of the grid in the following format: 0x0:0\nThe size is the number of cells columnsly and rowsly, and the seed is the number of randomly placed live cells to start with.\n(e.g. 40x40:200).\n")
+    columns, rows, seed = validateGridInput(gridInput)    
 
     # Print grid and get confirmation to run
-    liveCells = GridHelper.generateLiveCells(horizontal, vertical, seed)
-    PrintHelper.printGrid(horizontal, vertical, liveCells)
+    liveCells = GridHelper.generateLiveCells(columns, rows, seed)
+    PrintHelper.printGrid(columns, rows, liveCells)
     shouldRun = input("\nWould you like to run this seed?\ny or n\n")
     
     if shouldRun == 'y':
-        return horizontal, vertical, liveCells
+        return columns, rows, liveCells
     
     else:
         return preload()
@@ -38,23 +38,23 @@ def validateGridInput(gridInput):
         raise Exception ('Invalid input, format must be 0x0:0 (e.g. 40x40:200)')
 
     size = gridInput.split(':')[0]
-    horizontal = size.split('x')[0]
-    vertical = size.split('x')[1]
+    columns = size.split('x')[0]
+    rows = size.split('x')[1]
     seed = gridInput.split(':')[1]
 
     # validate that both inputs are integers
-    if not MathHelper.isInt(horizontal) or not MathHelper.isInt(vertical) or not MathHelper.isInt(seed):
+    if not MathHelper.isInt(columns) or not MathHelper.isInt(rows) or not MathHelper.isInt(seed):
         raise Exception ('Invalid input type, both size and seed must be integers (e.g. 40x40:200)')
 
-    horizontal = int(horizontal)
-    vertical = int(vertical)
+    columns = int(columns)
+    rows = int(rows)
     seed = int(seed)
 
     # validate that seed is not larger than the squared size
-    if seed > (horizontal * vertical):
+    if seed > (columns * rows):
         raise Exception ('Invalid input seed, must be smaller than the square of the size (e.g. 40x40:200)')
 
-    return horizontal, vertical, seed
+    return columns, rows, seed
 
 if __name__ == '__main__':
     try:

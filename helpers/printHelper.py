@@ -16,12 +16,12 @@ class PrintHelper:
     
     # Convert the dataset to a grid, and print it on the console
     @staticmethod
-    def printGrid(horizontal, vertical, liveCells):
+    def printGrid(columns, rows, liveCells):
         PrintHelper.clearScreen()
         count = 0
-        for row in range(vertical):
+        for row in range(rows):
             printRow = ''
-            for element in range(horizontal):
+            for element in range(columns):
                 count += 1
                 printRow += '□ ' if UtilHelper.safeIndex(liveCells, count) == -1 else '■ '
                 printRow.strip()
@@ -29,6 +29,6 @@ class PrintHelper:
     
     # Print the next lifecycle grid
     @staticmethod
-    def printGridLifeCycle(horizontal, vertical, liveCells, iteration):
-        PrintHelper.printGrid(horizontal, vertical, liveCells)
+    def printGridLifeCycle(columns, rows, liveCells, iteration):
+        PrintHelper.printGrid(columns, rows, liveCells)
         print('\nLifecycle', iteration)
